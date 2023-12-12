@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,82 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* .leaflet-container {
+  height: 800px;
+} */
+
+.cv11 {
+  font-variation-settings: "cv11" 1;
+}
+
+.pin2 {
+  /* position: absolute;
+  top: 40%;
+  left: 50%; */
+  /* margin-left: 115px; */
+  position: absolute;
+
+  border-radius: 50%;
+  border: 6px solid orangered;
+  width: 22px;
+  height: 22px;
+  left: -5px;
+  bottom: 20px;
+}
+
+.pin2::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  bottom: -30px;
+  left: -5px;
+  border: 10px solid transparent;
+  border-top: 20px solid orangered;
+}
+
+/* #leva__root > * {
+  height: 400px;
+  max-height: 400px;
+  overflow: scroll;
+} */
+.leva-container {
+  padding: 20px;
+}
+
+.leva-container > div {
+  max-height: 350px;
+  overflow: auto;
+}
+.leva-container > div::-webkit-scrollbar {
+  width: 0.7em;
+  padding: 3px;
+}
+.leva-container > div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+  background-color: #f4f6f8;
+}
+.leva-container > div::-webkit-scrollbar-thumb {
+  background-color: #dce1e9;
+  border-radius: 2px;
+}
+.dark .leva-container > div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #181b20;
+}
+.dark .leva-container > div::-webkit-scrollbar-thumb {
+  background-color: #364151;
+}
+.animation-fill {
+  animation-fill-mode: both;
+}
+/* .navb {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+} */
+.app-container {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
 }
