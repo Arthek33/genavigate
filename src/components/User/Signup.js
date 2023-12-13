@@ -31,7 +31,7 @@ function Signup() {
 
   return (
     <div className="flex justify-center items-center grow bg-gray-100 dark:bg-gray-800">
-      <div className="p-6 max-w-sm w-full bg-white dark:bg-gray-700 rounded shadow-md mb-20 animate-fade-in-up animation-fill">
+      <div className="p-6 mx-4 mb-20 max-w-sm w-full bg-white dark:bg-gray-700 rounded shadow-md animate-fade-in-up animation-fill">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-800 dark:text-gray-200">
           Sign Up
         </h1>

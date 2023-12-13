@@ -10,7 +10,11 @@ function VehicleCard({ vehicle }) {
 
   return (
     <div className="border dark:border-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-gray-700">
-      <FavoriteIcon vehicle={vehicle} className="absolute top-6 right-7" />
+      <FavoriteIcon
+        vehicle={vehicle}
+        className="absolute top-6 right-7"
+        clickable={false}
+      />
       <img
         src={imageURL}
         alt={vehicle.name}

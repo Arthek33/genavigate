@@ -52,9 +52,9 @@ function Profile() {
   const selectedPhoto = watch("photo");
 
   return (
-    <div className="flex justify-center items-start pt-10 grow bg-gray-100 dark:bg-gray-800">
+    <div className="flex justify-center items-start sm:pt-10 grow bg-gray-100 dark:bg-gray-800">
       <div className="flex w-full max-w-5xl rounded overflow-hidden animate-fade-in-up animation-fill m-4">
-        <aside className="w-52 py-6 bg-gradient-to-br from-orange-400 to-red-500 text-white">
+        <aside className="hidden sm:block w-52 py-6 bg-gradient-to-br from-orange-400 to-red-500 text-white">
           <ul>
             <li className="p-3 border-l-4 border-white font-medium">
               Settings
@@ -66,7 +66,7 @@ function Profile() {
             </li>
           </ul>
         </aside>
-        <main className="p-16 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 grow">
+        <main className="p-10 sm:p-16 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 grow">
           <h1 className="text-2xl font-bold mb-10">Your Account Settings</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 my-2">
             <div className="leading-normal text-sm">

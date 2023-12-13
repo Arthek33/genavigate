@@ -8,11 +8,12 @@ import MapViewer from "./components/MapViewer";
 import Login from "./components/User/Login";
 import Signup from "./components/User/Signup";
 import Profile from "./components/User/Profile";
+import VehicleFavorites from "./components/VehicleFavorites";
+import PageNotFound from "./components/PageNotFound";
 import { AuthProvider } from "./context/AuthContext";
 import { AlertProvider } from "./context/AlertContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import "./App.css";
-import VehicleFavorites from "./components/VehicleFavorites";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/favorites" element={<VehicleFavorites />} />
+                <Route path="*" element={<PageNotFound />} />
               </Routes>
             </Router>
           </FavoritesProvider>

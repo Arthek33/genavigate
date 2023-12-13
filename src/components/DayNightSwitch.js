@@ -7,12 +7,13 @@ function DayNightSwitch() {
   );
   const toggleTheme = () => {
     const currentTheme = localStorage.theme;
-    setDarkSide(!darkSide);
     if (currentTheme === "dark") {
+      setDarkSide(false);
       document.documentElement.classList.remove("dark");
       localStorage.theme = "light";
       window.dispatchEvent(new Event("storage"));
     } else {
+      setDarkSide(true);
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
       window.dispatchEvent(new Event("storage"));

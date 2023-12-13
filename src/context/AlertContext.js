@@ -10,7 +10,7 @@ export const AlertProvider = ({ children }) => {
     type: "success",
   });
 
-  const showAlert = (message, duration = 10000, type = "success") => {
+  const showAlert = (message, duration = 5000, type = "success") => {
     setAlert({ show: true, message, type });
     setTimeout(
       () => setAlert({ show: false, message: "", type: "success" }),

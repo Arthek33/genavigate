@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { AlertContext } from "../../context/AlertContext";
-import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../utils/api";
 
 function Login() {
@@ -20,6 +20,8 @@ function Login() {
       const { email, password } = data;
       const response = await loginUser(email, password);
       const { token, data: userData } = response.data;
+      // TODO : remove token, since now using httponly cookie
+      // Maybe just keep localstorage logic with string variable to see if user logged in
       login(token, userData.user);
       showAlert("Logged in successfully", 5000, "success");
       navigate("/");
@@ -34,7 +36,7 @@ function Login() {
 
   return (
     <div className="flex justify-center items-center grow bg-gray-100 dark:bg-gray-800">
-      <div className="p-6 max-w-sm w-full bg-white dark:bg-gray-700 rounded shadow-md mb-20 animate-fade-in-up animation-fill">
+      <div className="p-6 mx-4 mb-20 max-w-sm w-full bg-white dark:bg-gray-700 rounded shadow-md animate-fade-in-up animation-fill">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-800 dark:text-gray-200">
           Log In
         </h1>
