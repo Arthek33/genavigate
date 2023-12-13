@@ -9,10 +9,14 @@ import { logoutUser } from "../utils/api";
 import Alert from "./Alert/Alert";
 
 const navigation = [
-  { name: "Collections", href: "/", current: true },
+  { name: "Collections", href: "/", target: "" },
   // { name: "Categories", href: "#", current: false },
-  { name: "Map", href: "/map", current: false },
-  { name: "API", href: "/api", current: false },
+  { name: "Map", href: "/map", target: "" },
+  {
+    name: "API",
+    href: "https://documenter.getpostman.com/view/29161324/2s9YkjAipd",
+    target: "_blank",
+  },
 ];
 
 function classNames(...classes) {
@@ -78,6 +82,7 @@ export default function Navbar2() {
                       <NavLink
                         key={item.name}
                         to={item.href}
+                        target={item.target}
                         className={({ isActive }) =>
                           classNames(
                             isActive
@@ -209,6 +214,7 @@ export default function Navbar2() {
                     key={item.name}
                     // as="a"
                     to={item.href}
+                    target={item.target}
                     className={({ isActive }) =>
                       classNames(
                         isActive
