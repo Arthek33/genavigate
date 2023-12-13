@@ -62,7 +62,7 @@ function MapLocation({ vehicles }) {
               <Popup key={`popup-${idx}`}>
                 <strong>{vehicle.location.description}</strong> <br />{" "}
                 {vehicle.location.address}
-                <Link to={`/vehicle/${vehicle.id}`}> See details </Link>
+                <Link to={`/vehicle/${vehicle.slug}`}> See details </Link>
               </Popup>
             </Marker>
           );
