@@ -6,6 +6,7 @@ import { Leva } from "leva";
 import FavoriteIcon from "./FavoriteIcon";
 import { getVehicleBySlug } from "../utils/api";
 import LoaderClassic from "../assets/LoaderClassic";
+import Breadcrumbs from "./Breadcrumbs";
 
 import {
   TagIcon,
@@ -119,6 +120,12 @@ function VehicleDetail() {
       setIsLoading(false);
     };
     fetchVehicle();
+    checkTheme();
+    window.addEventListener("storage", checkTheme);
+    return () => {
+      // Remove the handler when the component unmounts
+      window.removeEventListener("storage", checkTheme);
+    };
   }, [slug]);
 
   if (isLoading) return <LoaderClassic color={"orange"} size={10} />;
@@ -130,7 +137,16 @@ function VehicleDetail() {
     );
 
   return vehicle ? (
-    <div className="container mx-auto max-w-7xl py-8 px-4">
+    <div className="container mx-auto max-w-7xl px-4 mb-8">
+      <div className="py-5">
+        <Breadcrumbs
+          items={[
+            { label: "All Vehicles", path: "/" },
+            // { label: "Library", path: "/library" },
+            { label: vehicle.name, path: "" },
+          ]}
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="col-span-2 relative">
           <FavoriteIcon

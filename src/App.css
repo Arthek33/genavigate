@@ -106,11 +106,21 @@
 .animation-fill {
   animation-fill-mode: both;
 }
-/* .navb {
+.navb,
+.content-container {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+/* .app-container {
   margin-left: calc(100vw - 100%);
   margin-right: 0;
 } */
-.app-container {
-  margin-left: calc(100vw - 100%);
-  margin-right: 0;
+
+.tooltip-custom {
+  background-color: #030712;
+  color: #f3f4f6;
+}
+.dark .tooltip-custom {
+  background-color: #374151;
+  color: #f3f4f6;
 }

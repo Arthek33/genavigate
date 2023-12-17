@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { AlertContext } from "../../context/AlertContext";
 import { registerUser } from "../../utils/api";
+import ButtonSubmit from "../ButtonSubmit";
 
 function Signup() {
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useContext(AlertContext);
   const navigate = useNavigate();
   const {
@@ -15,12 +17,14 @@ function Signup() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const { name, email, password, passwordConfirm } = data;
       await registerUser(name, email, password, passwordConfirm);
       showAlert("Registered successfully", 5000, "success");
       navigate("/login");
     } catch (err) {
+      setIsLoading(false);
       showAlert(
         err.response ? err.response.data.message : err.message,
         5000,
@@ -30,7 +34,7 @@ function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center grow bg-gray-100 dark:bg-gray-800">
+    <div className="flex justify-center items-center grow bg-gray-100 dark:bg-gray-800 min-h-[calc(100vh-65px)]">
       <div className="p-6 mx-4 mb-20 max-w-sm w-full bg-white dark:bg-gray-700 rounded shadow-md animate-fade-in-up animation-fill">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-800 dark:text-gray-200">
           Sign Up
@@ -114,12 +118,13 @@ function Signup() {
 
           {/* Signup Button */}
           <div>
-            <button
+            <ButtonSubmit isLoading={isLoading}>Sign Up</ButtonSubmit>
+            {/* <button
               type="submit"
               className="w-full text-white bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-red-800 font-medium rounded px-3 py-2 text-center"
             >
               Sign Up
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

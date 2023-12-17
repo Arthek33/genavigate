@@ -52,7 +52,7 @@ function Profile() {
   const selectedPhoto = watch("photo");
 
   return (
-    <div className="flex justify-center items-start sm:pt-10 grow bg-gray-100 dark:bg-gray-800">
+    <div className="min-h-[calc(100vh-65px)] flex justify-center sm:pt-10 grow bg-gray-100 dark:bg-gray-800">
       <div className="flex w-full max-w-5xl rounded overflow-hidden animate-fade-in-up animation-fill m-4">
         <aside className="hidden sm:block w-52 py-6 bg-gradient-to-br from-orange-400 to-red-500 text-white">
           <ul>
@@ -108,7 +108,7 @@ function Profile() {
                 ) : (
                   user?.photo && (
                     <img
-                      src={`${API_BASE_URL}/img/users/${user.photo}`}
+                      src={`/img/users/${user.photo}`}
                       alt="User"
                       className="w-20 h-20 object-cover rounded-full"
                     />

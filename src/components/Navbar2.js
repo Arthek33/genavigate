@@ -113,7 +113,7 @@ export default function Navbar2() {
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
-                          src={`${API_BASE_URL}/img/users/${user.photo}`}
+                          src={`/img/users/${user.photo}`}
                           alt=""
                         />
                       </Menu.Button>

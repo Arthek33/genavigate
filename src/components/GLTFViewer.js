@@ -13,20 +13,6 @@ export default function GLTFViewer(props) {
     setRotation(rotate);
   }
 
-  // const options = useControls(
-  //   "Customization",
-  //   () => ({
-  //     rotation: {
-  //       value: true,
-  //       order: -2,
-  //     },
-  //   }),
-  //   [props]
-  // );
-
-  // console.log("options Viewer", options);
-  // const options = useControls();
-
   return (
     <Suspense fallback={<HashLoader color="#f45008" size={150} />}>
       <Canvas shadows dpr={[1, 2]} camera={{ fov: 45, zoom: 0.7 }}>
