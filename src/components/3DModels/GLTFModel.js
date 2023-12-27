@@ -3,14 +3,14 @@ import { useGLTF } from "@react-three/drei";
 import { useControls } from "leva";
 import { Color } from "three";
 
-function findChildren(parent) {
-  return [
-    parent.name,
-    parent.children.map((c) => {
-      return findChildren(c);
-    }),
-  ];
-}
+// function findChildren(parent) {
+//   return [
+//     parent.name,
+//     parent.children.map((c) => {
+//       return findChildren(c);
+//     }),
+//   ];
+// }
 function generateGL(materials, element, index) {
   if (!element.children.length) {
     return (
@@ -63,6 +63,7 @@ export default function Model(props) {
   // const API_BASE_URL ="http://localhost:3000/";
   // const imageURL = `${API_BASE_URL}img/vehicles/${vehicle.imageCover}`;
   const { nodes, materials } = useGLTF(`${API_BASE_URL}/gltf/${props.gltf}`);
+  // const { nodes, materials } = useGLTF(`${API_BASE_URL}/gltf/model-mac.gltf`);
   useControls(
     "Customization",
     () => {

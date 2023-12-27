@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar2 from "./components/Navbar2";
+import Navbar2 from "./components/Routing/Navbar2";
 // import VehicleList from "./components/VehicleList";
-import VehicleCollection from "./components/VehicleCollection";
-import VehicleDetail from "./components/VehicleDetail";
-import MapViewer from "./components/MapViewer";
+import Overview from "./components/Homepage/Overview";
+import VehicleCollection from "./components/Vehicles/VehicleCollection";
+import VehicleDetail from "./components/Vehicles/VehicleDetail";
+import MapViewer from "./components/Map/MapViewer";
 import Login from "./components/User/Login";
 import Signup from "./components/User/Signup";
 import Profile from "./components/User/Profile";
-import VehicleFavorites from "./components/VehicleFavorites";
-import PageNotFound from "./components/PageNotFound";
-import ProtectedRoute from "./components/ProtectedRoute";
+import VehicleFavorites from "./components/Vehicles/VehicleFavorites";
+import PageNotFound from "./components/Routing/PageNotFound";
+import ProtectedRoute from "./components/Routing/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 import { AlertProvider } from "./context/AlertContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
@@ -27,7 +28,8 @@ function App() {
               <Navbar2 />
               <div className="content-container">
                 <Routes>
-                  <Route path="/" element={<VehicleCollection />} />
+                  <Route path="/" element={<Overview />} />
+                  <Route path="/collection" element={<VehicleCollection />} />
                   <Route path="/vehicle/:slug" element={<VehicleDetail />} />
                   <Route path="/map" element={<MapViewer />} />
                   <Route path="/login" element={<Login />} />

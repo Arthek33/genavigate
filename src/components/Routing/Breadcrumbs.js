@@ -25,7 +25,9 @@ function Breadcrumbs({ items }) {
 
             <li
               className={
-                index === items.length - 1 ? "" : "hover:text-gray-700"
+                index === items.length - 1
+                  ? ""
+                  : "dark:hover:text-gray-200 hover:text-gray-700"
               }
             >
               {item.path ? (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import VehicleList from "./VehicleList";
-import { getFavoriteVehicles } from "../utils/api";
-import { AuthContext } from "../context/AuthContext";
-import LoaderClassic from "../assets/LoaderClassic";
+import { getFavoriteVehicles } from "../../utils/api";
+import { AuthContext } from "../../context/AuthContext";
+import LoaderClassic from "../../assets/LoaderClassic";
 
 function VehicleFavorites() {
   const [favoriteVehicles, setFavoriteVehicles] = useState([]);

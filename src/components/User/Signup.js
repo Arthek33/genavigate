@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { AlertContext } from "../../context/AlertContext";
 import { registerUser } from "../../utils/api";
-import ButtonSubmit from "../ButtonSubmit";
+import ButtonSubmit from "../Tools/ButtonSubmit";
 
 function Signup() {
   const [isLoading, setIsLoading] = useState(false);
@@ -118,7 +118,9 @@ function Signup() {
 
           {/* Signup Button */}
           <div>
-            <ButtonSubmit isLoading={isLoading}>Sign Up</ButtonSubmit>
+            <ButtonSubmit isLoading={isLoading} className="w-full">
+              Sign Up
+            </ButtonSubmit>
             {/* <button
               type="submit"
               className="w-full text-white bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-red-800 font-medium rounded px-3 py-2 text-center"

@@ -3,8 +3,8 @@ import "leaflet/dist/leaflet.css";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MapLocation from "./MapLocation";
-import { getAllVehicles } from "../utils/api";
-import LoaderClassic from "../assets/LoaderClassic";
+import { getAllVehicles } from "../../utils/api";
+import LoaderClassic from "../../assets/LoaderClassic";
 
 function MapViewer() {
   const [vehicles, setVehicles] = useState(null);

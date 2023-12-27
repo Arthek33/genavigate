@@ -1,15 +1,15 @@
 import { Fragment, useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import Hamburger from "hamburger-react";
-import DayNightSwitch from "./DayNightSwitch";
-import { AlertContext } from "../context/AlertContext";
-import { logoutUser } from "../utils/api";
-import Alert from "./Alert/Alert";
+import DayNightSwitch from "../Tools/DayNightSwitch";
+import { AlertContext } from "../../context/AlertContext";
+import { logoutUser } from "../../utils/api";
+import Alert from "../Alert/Alert";
 
 const navigation = [
-  { name: "Collections", href: "/", target: "" },
+  { name: "Collections", href: "/collection", target: "" },
   // { name: "Categories", href: "#", current: false },
   { name: "Map", href: "/map", target: "" },
   {
@@ -70,7 +70,7 @@ export default function Navbar2() {
                   <img
                     className="h-7 w-auto pr-2"
                     src="/genavigate-icon.png"
-                    alt="Your Company"
+                    alt="Genavigate"
                   />
                   <h2 className="hidden md:block dark:text-orange-600 text-orange-600">
                     Genavigate
@@ -179,8 +179,8 @@ export default function Navbar2() {
                 ) : (
                   <>
                     <Link
-                      className="relative inline-flex items-center justify-center p-0.5 mx-2 overflow-hidden md:text-sm text-xs font-medium text-gray-900 hover:shadow-md rounded-lg group bg-gradient-to-br from-orange-400 to-red-500 group-hover:from-orange-400 group-hover:to-red-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-red-800"
                       to="/login"
+                      className="relative inline-flex items-center justify-center p-0.5 mx-2 overflow-hidden md:text-sm text-xs font-medium text-gray-900 hover:shadow-md rounded-lg group bg-gradient-to-br from-orange-400 to-red-500 group-hover:from-orange-400 group-hover:to-red-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-red-800"
                     >
                       <span className="relative md:px-5 px-1.5 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-800 rounded-md group-hover:bg-opacity-0">
                         Login
@@ -188,8 +188,8 @@ export default function Navbar2() {
                     </Link>
 
                     <Link
-                      className="text-white bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 hover:shadow-md focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-red-800 font-medium rounded-lg md:text-sm text-xs md:px-5 px-1.5 py-2 text-center transition-all ease-in"
                       to="/signup"
+                      className="text-white bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 hover:shadow-md focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-red-800 font-medium rounded-lg md:text-sm text-xs md:px-5 px-1.5 py-2 text-center transition-all ease-in"
                     >
                       Sign up
                     </Link>

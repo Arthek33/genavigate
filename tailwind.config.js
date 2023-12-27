@@ -6,27 +6,16 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      // fontFamily: {
-      //   sans: [
-      //     "Inter",
-      //     ...defaultTheme.fontFamily.sans,
-      //     // {
-      //     //   fontFeatureSettings: '"cv11", "ss01"',
-      //     //   fontVariationSettings: '"opsz" 32',
-      //     // },
-      //   ],
-      // },
+      backgroundImage: {
+        "hero-pattern-hexagon": "url('./hexagon.svg')",
+      },
       fontFamily: {
         sans: [
           "Inter var, sans-serif",
           {
-            // fontFeatureSettings: '"cv02", "cv03", "cv04", "cv11"',
             fontFeatureSettings: '"cv02", "cv03", "cv04", "cv11"',
             fontVariationSettings: "normal",
-            // fontFeatureSettings: '"cv11", "ss01"',
-            // fontVariationSettings: '"opsz" 32',
           },
-          // ...defaultTheme.fontFamily.sans,
         ],
       },
       height: {
@@ -34,20 +23,6 @@ module.exports = {
         136: "36rem",
         150: "40rem",
       },
-      // animationDelay: {
-      //   "100ms": "100ms",
-      //   "200ms": "200ms",
-      //   "300ms": "300ms",
-      //   "400ms": "400ms",
-      //   "500ms": "500ms",
-      //   "600ms": "600ms",
-      //   "700ms": "700ms",
-      //   "800ms": "800ms",
-      //   "900ms": "900ms",
-      //   "1000ms": "1000ms",
-      //   "1100ms": "1100ms",
-      // Add more as needed
-      // },
       keyframes: {
         fadeinupa: {
           "0%": {
@@ -74,9 +49,35 @@ module.exports = {
         "fade-in-up": "fadeinupa .6s ease-out",
         "fade-in-down": "fadeindowna .6s ease-out",
       },
+      // backgroundImage: {
+      //   genavigate-header: 'Overview'
+      // }
+    },
+    patterns: {
+      opacities: {
+        100: "1",
+        80: ".80",
+        60: ".60",
+        40: ".40",
+        20: ".20",
+        10: ".10",
+        5: ".05",
+      },
+      sizes: {
+        1: "0.25rem",
+        2: "0.5rem",
+        4: "1rem",
+        6: "1.5rem",
+        8: "2rem",
+        16: "4rem",
+        20: "5rem",
+        24: "6rem",
+        32: "8rem",
+      },
     },
   },
   plugins: [
+    // require("tailwindcss-bg-patterns"),
     // plugin(function ({ matchUtilities, theme }) {
     //   matchUtilities({
     //     "animation-delay": (value) => {

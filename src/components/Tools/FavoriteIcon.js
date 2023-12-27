@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { HeartIcon } from "@heroicons/react/24/outline";
-import { AuthContext } from "../context/AuthContext";
-import { FavoritesContext } from "../context/FavoritesContext";
-import { addFavoriteVehicle, removeFavoriteVehicle } from "../utils/api";
+import { AuthContext } from "../../context/AuthContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
+import { addFavoriteVehicle, removeFavoriteVehicle } from "../../utils/api";
 import { Tooltip } from "react-tooltip";
 
 function FavoriteIcon({ vehicle, className, size = 1.5, clickable = true }) {

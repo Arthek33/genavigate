@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { AlertContext } from "../../context/AlertContext";
 import { loginUser } from "../../utils/api";
-import ButtonSubmit from "../ButtonSubmit";
+import ButtonSubmit from "../Tools/ButtonSubmit";
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -81,7 +81,9 @@ function Login() {
             )}
           </div>
           <div>
-            <ButtonSubmit isLoading={isLoading}>Login</ButtonSubmit>
+            <ButtonSubmit isLoading={isLoading} className="w-full">
+              Login
+            </ButtonSubmit>
             {/* <button
               type="submit"
               // className="w-full bg-orange-500 text-white px-3 py-2 rounded hover:bg-orange-600 dark:hover:bg-orange-700"

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import GLTFViewer from "./GLTFViewer";
-import MapLocation from "./MapLocation";
+import GLTFViewer from "../3DModels/GLTFViewer";
+import MapLocation from "../Map/MapLocation";
 import { Leva } from "leva";
-import FavoriteIcon from "./FavoriteIcon";
-import { getVehicleBySlug } from "../utils/api";
-import LoaderClassic from "../assets/LoaderClassic";
-import Breadcrumbs from "./Breadcrumbs";
+import FavoriteIcon from "../Tools/FavoriteIcon";
+import { getVehicleBySlug } from "../../utils/api";
+import LoaderClassic from "../../assets/LoaderClassic";
+import Breadcrumbs from "../Routing/Breadcrumbs";
 
 import {
   TagIcon,
@@ -141,7 +141,7 @@ function VehicleDetail() {
       <div className="py-5">
         <Breadcrumbs
           items={[
-            { label: "All Vehicles", path: "/" },
+            { label: "All Vehicles", path: "/collection" },
             // { label: "Library", path: "/library" },
             { label: vehicle.name, path: "" },
           ]}

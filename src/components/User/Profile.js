@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { AlertContext } from "../../context/AlertContext";
 import { updateUser } from "../../utils/api";
+import ButtonSubmit from "../Tools/ButtonSubmit";
 
 function Profile() {
+  const [isLoading, setIsLoading] = useState(false);
   const { user, updateUserContext } = useContext(AuthContext);
   const { showAlert } = useContext(AlertContext);
   const {
@@ -28,6 +30,7 @@ function Profile() {
   }, [user, setValue]);
 
   const onSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append("name", data.name);
@@ -40,8 +43,10 @@ function Profile() {
       const updatedUserData = response.data?.data.user;
       updateUserContext(updatedUserData);
 
+      setIsLoading(false);
       showAlert("Profile updated successfully", 5000, "success");
     } catch (err) {
+      setIsLoading(false);
       showAlert(
         err.response ? err.response.data.message : err.message,
         5000,
@@ -131,12 +136,17 @@ function Profile() {
               </div>
             </div>
             <div className="text-right">
-              <button
+              <div>
+                <ButtonSubmit isLoading={isLoading} className="min-w-[8rem]">
+                  Save Settings
+                </ButtonSubmit>
+              </div>
+              {/* <button
                 className="text-white bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-500 hover:to-red-600 focus:ring-4 focus:outline-none focus:ring-orange-200 dark:focus:ring-red-800 font-medium rounded px-3 py-2 text-center"
                 type="submit"
               >
                 Save Settings
-              </button>
+              </button> */}
             </div>
           </form>
         </main>

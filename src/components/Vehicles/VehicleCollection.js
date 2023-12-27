@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import VehicleList from "./VehicleList";
-import { getAllVehicles } from "../utils/api";
-import LoaderClassic from "../assets/LoaderClassic";
+import { getAllVehicles } from "../../utils/api";
+import LoaderClassic from "../../assets/LoaderClassic";
 // import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 function VehicleCollection() {
@@ -67,7 +67,7 @@ function VehicleCollection() {
             name="price"
             id="price"
             // className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 sm:text-sm sm:leading-6 dark:bg-gray-700 text-gray-900 dark:text-gray-200 ring-1 ring-inset ring-gray-300 dark:ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:outline-none focus:ring-orange-500 focus:border-orange-500 dark:focus:ring-orange-500"
-            className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 sm:text-sm sm:leading-6 bg-gray-100 border border-gray-500 dark:bg-gray-700 text-gray-900 dark:text-gray-200 focus:outline-none focus:border-b-2 focus:border-b-orange-500"
+            className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 sm:text-sm sm:leading-6 bg-gray-100 border border-gray-500 dark:bg-gray-700 text-gray-900 dark:text-gray-200 focus:outline-none border-b-2 border-transparent focus:border-b-orange-500"
             placeholder="Search vehicles"
             onChange={handleSearchChange}
           />
